@@ -123,7 +123,7 @@ def injectable(scope: ServiceLifetime = ServiceLifetime.SINGLETON, module: Type[
 
   .. code-block::
 
-      @injectable("singleton")
+      @injectable(ServiceLifetime.SINGLETON)
       class MailService:
           ...
 
