@@ -234,36 +234,37 @@ You can inject services into another service by using the decorator on the const
    def my_function(service_b: ServiceB):
        ...
 
-Beware, though, that this strategy could lead to an injection loop. Make sure that classes
-injected into other classes are not circularly dependent, or you will get
-an infinite loop trying to instantiate them, like in this example:
+.. warning::
+    Beware, though, that this strategy could lead to an injection loop. Make sure that classes
+    injected into other classes are not circularly dependent, or you will get
+    an infinite loop trying to instantiate them, like in this example:
 
-.. code-block::
+    .. code-block::
 
-   class ServiceA:
-       @inject()
-       def __init__(self, service_b: ServiceB):
-           ...
+        class ServiceA:
+            @inject()
+            def __init__(self, service_b: ServiceB):
+                ...
 
-   class ServiceB:
-       @inject()
-       def __init__(self, service_a: ServiceA):
-           ...
+        class ServiceB:
+            @inject()
+            def __init__(self, service_a: ServiceA):
+                ...
 
-   register_singleton(ServiceA)
-   register_singleton(ServiceB)
+        register_singleton(ServiceA)
+        register_singleton(ServiceB)
 
-   # A circular injection loop happens here!!!
-   # When injecting ServiceB, ServiceA will be instantiated, and during
-   # its instantiation, ServiceB will be instantiated again, which in turn
-   # will instantiate ServiceA again and so on until everything breaks!
-   @inject()
-   def my_function(service_b: ServiceB):
-       ...
+        # A circular injection loop happens here!!!
+        # When injecting ServiceB, ServiceA will be instantiated, and during
+        # its instantiation, ServiceB will be instantiated again, which in turn
+        # will instantiate ServiceA again and so on until everything breaks!
+        @inject()
+        def my_function(service_b: ServiceB):
+            ...
 
-This issue happens only when injecting into the constructor, or into a method called by the
-constructor. If you need to access a service from another service you can inject it into
-a class getter through the `inject_getter()` decorator:
+    This issue happens only when injecting into the constructor, or into a method called by the
+    constructor. If you need to access a service from another service you can inject it into
+    a class getter through the `inject_getter()` decorator:
 
 .. code-block::
 
