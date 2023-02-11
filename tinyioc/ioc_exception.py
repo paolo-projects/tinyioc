@@ -1,0 +1,4 @@
+
+
+class IocException(Exception):
+    pass

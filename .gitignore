@@ -1,0 +1,9 @@
+venv
+.idea
+.coverage
+htmlcov
+__pycache__
+.pytest_cache
+dist
+tinyioc.egg-info
+build

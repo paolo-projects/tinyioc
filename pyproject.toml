@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tinyioc"
+version = "0.1.2"
+dependencies = []
+readme = "README.md"
+authors = [{ name = "Paolo Infante", email = "info@paoloinfante.it" }]
+license = { file = "LICENSE" }
+keywords = ["dependency", "injection", "ioc", "inversion", "control"]
+
+[project.urls]
+Homepage = "https://github.com/paolo-projects/tinyioc"
