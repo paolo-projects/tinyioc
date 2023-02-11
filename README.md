@@ -17,8 +17,8 @@ pip install tinyioc
 
 ## Documentation
 
-Read the docs here: [http://paolo-projects.github.io/tinyioc](http://paolo-projects.github.io/tinyioc)
+Read the docs here: [https://tinyioc.readthedocs.io/en/latest/](https://tinyioc.readthedocs.io/en/latest/)
 
 ## License
 
-This library is licensed under MIT license: more info [here](/LICENSE)
+This library is licensed under MIT license: more info [here](https://github.com/paolo-projects/tinyioc/blob/main/LICENSE)
