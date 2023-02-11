@@ -3,48 +3,42 @@ Reference
 
 .. contents::
 
-IocContainer class
+Injection decorators
 ------------------
 
-.. autoclass:: tinyioc.container.IocContainer
-    :members:
+.. automodule:: tinyioc
+    :members: inject, injectable
+    :undoc-members:
+    :show-inheritance:
 
-Decorators
-----------
+Injection helper methods
+------------------------
 
-.. automodule:: tinyioc.decorators
-    :members:
-
-Helpers
--------
-
-.. automodule:: tinyioc.helpers
-    :members:
-
-Service Lifetime
-________________
-
-.. autoclass:: tinyioc.types.ServiceLifetime
-    :members:
+.. automodule:: tinyioc
+    :members: register_instance, register_singleton, register_transient, get_service, unregister_service
+    :undoc-members:
+    :show-inheritance:
 
 Modules
 -------
 
-Decorators
-__________
+.. automodule:: tinyioc
+    :members: module, IocModule, FromModule, unregister_module
+    :undoc-members:
+    :show-inheritance:
 
-.. automodule:: tinyioc.module.decorators
-    :members:
+Module providers
+----------------
 
-Module class
-____________
+.. automodule:: tinyioc
+    :members: ProvideInstance, ProvideSingleton, ProvideTransient
+    :undoc-members:
+    :show-inheritance:
+    
+Service lifetime
+----------------
 
-.. autoclass:: tinyioc.module.module.IocModule
-    :members:
-
-Provide
-_______
-
-.. automodule:: tinyioc.module.provide
-    :members: ProvideSingleton, ProvideTransient, ProvideInstance
-
+.. automodule:: tinyioc
+    :members: ServiceLifetime
+    :undoc-members:
+    :show-inheritance:
